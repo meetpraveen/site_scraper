@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "site-scraper": {
+      "command": "bash",
+      "args": [".claude/run_mcp.sh"]
+    }
+  },
+  "permissions": {
+    "allow": [
+      "Bash(uv run site-scraper*)",
+      "Bash(uv sync*)",
+      "Bash(ls*)",
+      "Bash(find*)",
+      "Bash(docker compose*)"
+    ]
+  }
+}

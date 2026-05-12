@@ -1,0 +1,23 @@
+interface:
+  display_name: "Site Scraper"
+  short_description: "Crawl sites into DuckDB/Parquet"
+  default_prompt: "Use $site-scraper to inspect this website, plan a safe crawl, extract its data, and optionally generate a new site."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "chrome-devtools"
+      description: "Inspect and control a live Chrome browser, including snapshots, screenshots, console, and network requests."
+      transport: "stdio"
+    - type: "mcp"
+      value: "playwright"
+      description: "Optional Playwright browser automation MCP for structured page interaction."
+      transport: "stdio"
+    - type: "mcp"
+      value: "site-scraper"
+      description: "Site scraper MCP server — init_site, check_browser, inspect_site, crawl_site, export_run, generate_site, validate_site, resanitize_run, list_sites, list_runs, get_run_artifact, get_completeness_report."
+      transport: "stdio"
+      command: "uv"
+      args: ["run", "site-scraper-mcp"]
+      cwd: "/home/praveen/git/site_scraper"
+policy:
+  allow_implicit_invocation: true

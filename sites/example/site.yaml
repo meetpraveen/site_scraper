@@ -1,0 +1,50 @@
+name: example
+url: https://example.com/
+auth:
+  required: false
+  persist_state: false
+  storage_state_path: null
+guardrails:
+  allowed_actions:
+  - navigate
+  - filter
+  - sort
+  - paginate
+  - tab
+  - expand
+  - scroll
+  - download
+  blocked_label_patterns:
+  - save
+  - submit
+  - delete
+  - remove
+  - archive
+  - purchase
+  - checkout
+  - invite
+  - upload
+  - send
+  - post
+  - publish
+  - approve
+  - reject
+  - cancel subscription
+  - change password
+  - create
+  - update
+  - edit
+  - import
+  - sync
+  - run job
+  allowed_selectors: []
+  blocked_selectors: []
+limits:
+  max_pages: 50
+  max_states: 200
+  max_replay_requests: 200
+  max_runtime_seconds: 1800
+  concurrency: 2
+  delay_ms: 500
+rebuild_mode: ask
+notes: ''

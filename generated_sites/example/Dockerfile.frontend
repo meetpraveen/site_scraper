@@ -1,0 +1,5 @@
+FROM python:3.12-slim
+WORKDIR /app
+RUN pip install --no-cache-dir reflex
+COPY frontend /app
+CMD ["reflex", "run", "--env", "prod", "--backend-only", "--backend-port", "3000"]
